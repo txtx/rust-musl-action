@@ -19,6 +19,7 @@ ENV BUILD_DIR=/build \
     PKG_CONFIG_ALLOW_CROSS=1
 
 RUN apt-get update && apt-get install libssl-dev -y
+RUN ls /usr/local/ssl/
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
