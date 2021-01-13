@@ -14,7 +14,11 @@ ENV BUILD_DIR=/build \
     BUILD_TARGET=x86_64-unknown-linux-musl \
     OPENSSL_LIB_DIR=/usr/local/ssl/lib \
     OPENSSL_INCLUDE_DIR=/usr/local/ssl/include \
-    OPENSSL_STATIC=1
+    OPENSSL_STATIC=1 \
+    OPENSSL_DIR=/usr/local/ssl \
+    PKG_CONFIG_ALLOW_CROSS=1
+
+RUN apt-get install libssl-dev
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
