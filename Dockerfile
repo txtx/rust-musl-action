@@ -61,6 +61,7 @@ RUN rustup self update && rustup update
 RUN rustup target add $BUILD_TARGET
 RUN rustup component add clippy-preview
 RUN rustup component add rustfmt-preview
+RUN rustup target add x86_64-unknown-linux-musl
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
