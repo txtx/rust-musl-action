@@ -1,24 +1,26 @@
 # GitHub Action for Rust and MUSL
 
-Action provides an environment with Rust, MUSL and x86_64-unknown-linux-musl target.
+Action provides an environment with stable Rust 1.49, MUSL and x86_64-unknown-linux-musl target.
 
 ## Usage
 
 To compile a rust binary/library with x86_64-unknown-linux-musl target:
 
-```hcl
-action "build" {
-  env = {
-      BUILD_TARGET = "x86_64-unknown-linux-musl"
-  }
-  uses = "juankaram/rust-musl-action@master"
-  args = "cargo build --target $BUILD_TARGET --release"
-}
+```yaml
+name: Static Musl Build
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: gmiam/rust-musl-action@master
+    - name: Build and Test
+      run: cargo test --target x86_64-unknown-linux-musl
 ```
-
-## Attribution
-
-Heavily inspired by [GitHub Actions](https://github.com/actions), [Rust Action](https://github.com/icepuma/rust-action) and [David Lewis Work](https://github.com/davidarmstronglewis).
 
 ## License
 
