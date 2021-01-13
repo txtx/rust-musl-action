@@ -1,0 +1,11 @@
+name: 'rust-static-build'
+description: 'Rust static build using musl'
+inputs:
+  args:
+    description: 'cargo command to run'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.args }}
