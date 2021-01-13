@@ -8,12 +8,9 @@ To compile a rust binary/library with x86_64-unknown-linux-musl target:
 
 ```yaml
 name: Static Musl Build
-
 on: [push]
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
