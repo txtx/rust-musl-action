@@ -1,7 +1,7 @@
-FROM liuchong/rustup:1.49.0-musl
+FROM liuchong/rustup:1.50.0-musl
 
 LABEL name="rust-musl-stable"
-LABEL version="1.0.0"
+LABEL version="1.0.1"
 
 LABEL com.github.actions.name="Rust MUSL Builder Slim"
 LABEL com.github.actions.description="Provides a Rust MUSL environment"
