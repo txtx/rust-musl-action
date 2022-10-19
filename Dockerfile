@@ -1,4 +1,4 @@
-FROM liuchong/rustup:1.58.1-musl
+FROM liuchong/rustup:1.60.0-musl
 
 LABEL name="rust-musl-stable"
 LABEL version="1.1.2"
