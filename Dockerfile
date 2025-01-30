@@ -2,6 +2,7 @@ FROM ghcr.io/cross-rs/x86_64-unknown-linux-musl:latest
 
 LABEL name="rust-musl-stable"
 LABEL version="1.1.2"
+LABEL org.opencontainers.image.source https://github.com/txtx/rust-musl-action
 
 ENV BUILD_DIR=/workspace \
     OUTPUT_DIR=/output \
